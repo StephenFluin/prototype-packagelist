@@ -1,0 +1,513 @@
+[
+  {
+    "ecosystem": "npm",
+    "packages": [
+      {
+        "name": "express",
+        "versions": [
+          {
+            "version": "4.18.2",
+            "status": "current",
+            "releaseDate": "2023-10-12",
+            "heroDevsSupported": false,
+            "vulnerabilities": [
+              {
+                "cve": "CVE-2023-45857",
+                "severity": "medium",
+                "score": 5.3
+              }
+            ]
+          },
+          {
+            "version": "4.17.1",
+            "status": "end-of-life",
+            "releaseDate": "2022-08-15",
+            "heroDevsSupported": true,
+            "vulnerabilities": [
+              {
+                "cve": "CVE-2022-24999",
+                "severity": "high",
+                "score": 7.5
+              },
+              {
+                "cve": "CVE-2022-25001",
+                "severity": "medium",
+                "score": 5.8
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "lodash",
+        "versions": [
+          {
+            "version": "4.17.21",
+            "status": "current",
+            "releaseDate": "2021-02-20",
+            "heroDevsSupported": false,
+            "vulnerabilities": []
+          },
+          {
+            "version": "4.17.20",
+            "status": "end-of-life",
+            "releaseDate": "2020-02-20",
+            "heroDevsSupported": true,
+            "vulnerabilities": [
+              {
+                "cve": "CVE-2021-23337",
+                "severity": "high",
+                "score": 7.2
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "react",
+        "versions": [
+          {
+            "version": "18.2.0",
+            "status": "current",
+            "releaseDate": "2023-06-14",
+            "heroDevsSupported": false,
+            "vulnerabilities": []
+          },
+          {
+            "version": "17.0.2",
+            "status": "end-of-life",
+            "releaseDate": "2021-03-22",
+            "heroDevsSupported": true,
+            "vulnerabilities": [
+              {
+                "cve": "CVE-2023-12345",
+                "severity": "critical",
+                "score": 9.8
+              }
+            ]
+          },
+          {
+            "version": "16.14.0",
+            "status": "end-of-life",
+            "releaseDate": "2020-11-14",
+            "heroDevsSupported": false,
+            "vulnerabilities": [
+              {
+                "cve": "CVE-2022-67890",
+                "severity": "high",
+                "score": 8.1
+              },
+              {
+                "cve": "CVE-2022-67891",
+                "severity": "medium",
+                "score": 6.1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "angular",
+        "versions": [
+          {
+            "version": "17.0.5",
+            "status": "current",
+            "releaseDate": "2023-12-07",
+            "heroDevsSupported": false,
+            "vulnerabilities": []
+          },
+          {
+            "version": "16.2.12",
+            "status": "maintenance",
+            "releaseDate": "2023-10-25",
+            "heroDevsSupported": false,
+            "vulnerabilities": [
+              {
+                "cve": "CVE-2023-54321",
+                "severity": "low",
+                "score": 3.1
+              }
+            ]
+          },
+          {
+            "version": "15.2.10",
+            "status": "end-of-life",
+            "releaseDate": "2023-09-06",
+            "heroDevsSupported": true,
+            "vulnerabilities": [
+              {
+                "cve": "CVE-2023-11111",
+                "severity": "high",
+                "score": 7.8
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "ecosystem": "maven",
+    "packages": [
+      {
+        "name": "spring-boot",
+        "versions": [
+          {
+            "version": "3.2.0",
+            "status": "current",
+            "releaseDate": "2023-11-23",
+            "heroDevsSupported": false,
+            "vulnerabilities": []
+          },
+          {
+            "version": "2.7.18",
+            "status": "end-of-life",
+            "releaseDate": "2023-11-23",
+            "heroDevsSupported": true,
+            "vulnerabilities": [
+              {
+                "cve": "CVE-2023-20873",
+                "severity": "critical",
+                "score": 9.8
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "jackson-core",
+        "versions": [
+          {
+            "version": "2.15.3",
+            "status": "current",
+            "releaseDate": "2023-10-05",
+            "heroDevsSupported": false,
+            "vulnerabilities": []
+          },
+          {
+            "version": "2.14.2",
+            "status": "end-of-life",
+            "releaseDate": "2023-01-28",
+            "heroDevsSupported": false,
+            "vulnerabilities": [
+              {
+                "cve": "CVE-2023-35116",
+                "severity": "medium",
+                "score": 5.5
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "log4j-core",
+        "versions": [
+          {
+            "version": "2.21.1",
+            "status": "current",
+            "releaseDate": "2023-10-13",
+            "heroDevsSupported": false,
+            "vulnerabilities": []
+          },
+          {
+            "version": "2.17.1",
+            "status": "end-of-life",
+            "releaseDate": "2021-12-28",
+            "heroDevsSupported": true,
+            "vulnerabilities": [
+              {
+                "cve": "CVE-2021-44228",
+                "severity": "critical",
+                "score": 10.0
+              },
+              {
+                "cve": "CVE-2021-45105",
+                "severity": "medium",
+                "score": 5.9
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "ecosystem": "ruby",
+    "packages": [
+      {
+        "name": "rails",
+        "versions": [
+          {
+            "version": "7.1.2",
+            "status": "current",
+            "releaseDate": "2023-11-10",
+            "heroDevsSupported": false,
+            "vulnerabilities": []
+          },
+          {
+            "version": "6.1.7.6",
+            "status": "end-of-life",
+            "releaseDate": "2023-08-22",
+            "heroDevsSupported": true,
+            "vulnerabilities": [
+              {
+                "cve": "CVE-2023-38037",
+                "severity": "high",
+                "score": 7.5
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "nokogiri",
+        "versions": [
+          {
+            "version": "1.15.5",
+            "status": "current",
+            "releaseDate": "2023-11-17",
+            "heroDevsSupported": false,
+            "vulnerabilities": []
+          },
+          {
+            "version": "1.13.10",
+            "status": "end-of-life",
+            "releaseDate": "2022-12-08",
+            "heroDevsSupported": false,
+            "vulnerabilities": [
+              {
+                "cve": "CVE-2023-28362",
+                "severity": "medium",
+                "score": 6.1
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "ecosystem": "pip",
+    "packages": [
+      {
+        "name": "django",
+        "versions": [
+          {
+            "version": "4.2.7",
+            "status": "current",
+            "releaseDate": "2023-11-01",
+            "heroDevsSupported": false,
+            "vulnerabilities": []
+          },
+          {
+            "version": "3.2.23",
+            "status": "end-of-life",
+            "releaseDate": "2023-11-01",
+            "heroDevsSupported": true,
+            "vulnerabilities": [
+              {
+                "cve": "CVE-2023-46695",
+                "severity": "medium",
+                "score": 5.4
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "requests",
+        "versions": [
+          {
+            "version": "2.31.0",
+            "status": "current",
+            "releaseDate": "2023-05-22",
+            "heroDevsSupported": false,
+            "vulnerabilities": []
+          },
+          {
+            "version": "2.25.1",
+            "status": "end-of-life",
+            "releaseDate": "2020-12-16",
+            "heroDevsSupported": false,
+            "vulnerabilities": [
+              {
+                "cve": "CVE-2023-32681",
+                "severity": "medium",
+                "score": 6.1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "numpy",
+        "versions": [
+          {
+            "version": "1.25.2",
+            "status": "current",
+            "releaseDate": "2023-07-31",
+            "heroDevsSupported": false,
+            "vulnerabilities": []
+          },
+          {
+            "version": "1.21.6",
+            "status": "end-of-life",
+            "releaseDate": "2022-04-12",
+            "heroDevsSupported": true,
+            "vulnerabilities": [
+              {
+                "cve": "CVE-2021-41495",
+                "severity": "medium",
+                "score": 5.6
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "ecosystem": "apt",
+    "packages": [
+      {
+        "name": "openssl",
+        "versions": [
+          {
+            "version": "3.0.2",
+            "status": "current",
+            "releaseDate": "2023-08-01",
+            "heroDevsSupported": false,
+            "vulnerabilities": []
+          },
+          {
+            "version": "1.1.1f",
+            "status": "end-of-life",
+            "releaseDate": "2020-03-31",
+            "heroDevsSupported": true,
+            "vulnerabilities": [
+              {
+                "cve": "CVE-2023-0464",
+                "severity": "medium",
+                "score": 5.3
+              },
+              {
+                "cve": "CVE-2023-0465",
+                "severity": "medium",
+                "score": 5.3
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "curl",
+        "versions": [
+          {
+            "version": "8.4.0",
+            "status": "current",
+            "releaseDate": "2023-10-11",
+            "heroDevsSupported": false,
+            "vulnerabilities": []
+          },
+          {
+            "version": "7.68.0",
+            "status": "end-of-life",
+            "releaseDate": "2020-01-08",
+            "heroDevsSupported": false,
+            "vulnerabilities": [
+              {
+                "cve": "CVE-2023-38545",
+                "severity": "high",
+                "score": 8.1
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "ecosystem": "snapd",
+    "packages": [
+      {
+        "name": "firefox",
+        "versions": [
+          {
+            "version": "119.0.1",
+            "status": "current",
+            "releaseDate": "2023-11-01",
+            "heroDevsSupported": false,
+            "vulnerabilities": []
+          },
+          {
+            "version": "102.15.1esr",
+            "status": "end-of-life",
+            "releaseDate": "2023-09-26",
+            "heroDevsSupported": false,
+            "vulnerabilities": [
+              {
+                "cve": "CVE-2023-5721",
+                "severity": "high",
+                "score": 8.8
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "code",
+        "versions": [
+          {
+            "version": "1.84.2",
+            "status": "current",
+            "releaseDate": "2023-11-09",
+            "heroDevsSupported": false,
+            "vulnerabilities": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "ecosystem": "flatpak",
+    "packages": [
+      {
+        "name": "org.libreoffice.LibreOffice",
+        "versions": [
+          {
+            "version": "7.6.3",
+            "status": "current",
+            "releaseDate": "2023-11-02",
+            "heroDevsSupported": false,
+            "vulnerabilities": []
+          },
+          {
+            "version": "6.4.7",
+            "status": "end-of-life",
+            "releaseDate": "2021-01-14",
+            "heroDevsSupported": false,
+            "vulnerabilities": [
+              {
+                "cve": "CVE-2023-6185",
+                "severity": "medium",
+                "score": 5.5
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "org.gimp.GIMP",
+        "versions": [
+          {
+            "version": "2.10.36",
+            "status": "current",
+            "releaseDate": "2023-11-07",
+            "heroDevsSupported": false,
+            "vulnerabilities": []
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,1 +1,410 @@
-/* You can add global styles to this file, and also import other style files */
+/* HeroDevs Package List - Global Styles */
+
+/* CSS Custom Properties based on HeroDevs design system */
+:root {
+  /* Color Palette - Primary (Green) */
+  --color-primary-50: oklch(98.2% 0.018 155.826);
+  --color-primary-100: oklch(96.2% 0.044 156.743);
+  --color-primary-200: oklch(92.5% 0.084 155.995);
+  --color-primary-300: oklch(87.1% 0.15 154.449);
+  --color-primary-400: oklch(79.2% 0.209 151.711);
+  --color-primary-500: oklch(72.3% 0.219 149.579);
+  --color-primary-600: oklch(62.7% 0.194 149.214);
+  --color-primary-700: oklch(52.7% 0.154 150.069);
+  --color-primary-800: oklch(44.8% 0.119 151.328);
+  --color-primary-900: oklch(39.3% 0.095 152.535);
+
+  /* Secondary (Blue) */
+  --color-secondary-400: oklch(70.7% 0.165 254.624);
+  --color-secondary-500: oklch(62.3% 0.214 259.815);
+  --color-secondary-600: oklch(54.6% 0.245 262.881);
+
+  /* Accent (Fuchsia) */
+  --color-fuchsia-400: oklch(66.7% 0.295 322.15);
+  --color-fuchsia-500: oklch(66.7% 0.295 322.15);
+  --color-fuchsia-600: oklch(59.1% 0.293 322.896);
+
+  /* Neutrals */
+  --color-neutral-50: oklch(98.4% 0.003 247.858);
+  --color-neutral-100: oklch(96.8% 0.007 247.896);
+  --color-neutral-200: oklch(92.9% 0.013 255.508);
+  --color-neutral-300: oklch(86.9% 0.022 252.894);
+  --color-neutral-400: oklch(70.4% 0.04 256.788);
+  --color-neutral-500: oklch(55.4% 0.046 257.417);
+  --color-neutral-600: oklch(44.6% 0.043 257.281);
+  --color-neutral-700: oklch(37.2% 0.044 257.287);
+  --color-neutral-800: oklch(27.9% 0.041 260.031);
+  --color-neutral-900: oklch(20.8% 0.042 265.755);
+
+  /* Status Colors */
+  --color-success: var(--color-primary-500);
+  --color-warning: oklch(79.5% 0.184 86.047);
+  --color-error: oklch(63.7% 0.237 25.331);
+
+  /* Semantic Colors */
+  --text-primary: var(--color-neutral-700);
+  --text-secondary: var(--color-neutral-600);
+  --text-muted: var(--color-neutral-500);
+  --text-inverse: #fff;
+  
+  --bg-primary: #fff;
+  --bg-secondary: var(--color-neutral-50);
+  --bg-elevated: var(--color-neutral-100);
+  --bg-dark: var(--color-neutral-900);
+  
+  --border-color: var(--color-neutral-200);
+  --border-accent: var(--color-neutral-300);
+
+  /* Typography */
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+  /* HeroDevs Gradient */
+  --hd-gradient: linear-gradient(90.27deg, #f926e1 0.22%, #2ab5fb 99.76%);
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-primary: var(--color-neutral-200);
+    --text-secondary: var(--color-neutral-300);
+    --text-muted: var(--color-neutral-400);
+    --text-inverse: var(--color-neutral-900);
+    
+    --bg-primary: var(--color-neutral-900);
+    --bg-secondary: var(--color-neutral-800);
+    --bg-elevated: var(--color-neutral-800);
+    
+    --border-color: var(--color-neutral-800);
+    --border-accent: var(--color-neutral-700);
+  }
+}
+
+/* Base Reset and Typography */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-family);
+  line-height: 1.5;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Typography Styles */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+h1 {
+  font-size: 2.25rem; /* 36px */
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.875rem; /* 30px */
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.5rem; /* 24px */
+  font-weight: 600;
+}
+
+p {
+  margin-bottom: var(--spacing-md);
+  color: var(--text-primary);
+}
+
+/* Link Styles */
+a {
+  color: var(--color-fuchsia-500);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-fuchsia-600);
+  text-decoration: underline;
+}
+
+a:visited {
+  color: var(--color-secondary-600);
+}
+
+/* Button Styles */
+button {
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  background: var(--color-primary-500);
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+button:hover {
+  background: var(--color-primary-600);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Button Variants */
+.button-secondary {
+  background: transparent;
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+.button-secondary:hover {
+  background: var(--bg-elevated);
+  border-color: var(--border-accent);
+}
+
+.button-danger {
+  background: var(--color-error);
+  color: white;
+}
+
+.button-danger:hover {
+  background: oklch(57.7% 0.245 27.325);
+}
+
+/* Navigation Styles */
+nav {
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border-color);
+  padding: var(--spacing-md) 0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: var(--spacing-lg);
+  align-items: center;
+}
+
+nav a {
+  color: var(--text-secondary);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--text-primary);
+}
+
+/* Footer Styles */
+footer {
+  background: var(--bg-dark);
+  color: var(--text-inverse);
+  padding: var(--spacing-2xl) 0;
+  margin-top: auto;
+}
+
+footer a {
+  color: var(--color-fuchsia-400);
+}
+
+footer a:hover {
+  color: var(--color-fuchsia-500);
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--bg-primary);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+thead {
+  background: var(--bg-elevated);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+th {
+  padding: var(--spacing-md);
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+td {
+  padding: var(--spacing-md);
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+tbody tr:hover {
+  background: var(--bg-secondary);
+}
+
+/* Utility Classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-md {
+  gap: var(--spacing-md);
+}
+
+.mt-lg {
+  margin-top: var(--spacing-lg);
+}
+
+.mb-lg {
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Status Badge Styles */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.status-current {
+  background: var(--color-success);
+  color: white;
+}
+
+.status-eol {
+  background: var(--color-error);
+  color: white;
+}
+
+.status-deprecated {
+  background: var(--color-warning);
+  color: var(--color-neutral-900);
+}
+
+/* HeroDevs Logo Styles */
+.herodevs-logo {
+  height: 20px;
+  width: auto;
+  transition: transform 0.2s ease;
+}
+
+.herodevs-logo:hover {
+  transform: scale(1.1);
+}
+
+/* Card Styles */
+.card {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* Search Input */
+input[type="search"],
+input[type="text"] {
+  font-family: inherit;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type="search"]:focus,
+input[type="text"]:focus {
+  outline: none;
+  border-color: var(--color-primary-500);
+  box-shadow: 0 0 0 3px rgba(72, 187, 120, 0.1);
+}
