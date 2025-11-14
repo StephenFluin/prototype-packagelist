@@ -46,12 +46,12 @@
   --text-secondary: var(--color-neutral-600);
   --text-muted: var(--color-neutral-500);
   --text-inverse: #fff;
-  
+
   --bg-primary: #fff;
   --bg-secondary: var(--color-neutral-50);
   --bg-elevated: var(--color-neutral-100);
   --bg-dark: var(--color-neutral-900);
-  
+
   --border-color: var(--color-neutral-200);
   --border-accent: var(--color-neutral-300);
 
@@ -89,11 +89,11 @@
     --text-secondary: var(--color-neutral-300);
     --text-muted: var(--color-neutral-400);
     --text-inverse: var(--color-neutral-900);
-    
+
     --bg-primary: var(--color-neutral-900);
     --bg-secondary: var(--color-neutral-800);
     --bg-elevated: var(--color-neutral-800);
-    
+
     --border-color: var(--color-neutral-800);
     --border-accent: var(--color-neutral-700);
   }
@@ -121,7 +121,12 @@ body {
 }
 
 /* Typography Styles */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 600;
   line-height: 1.25;
   color: var(--text-primary);
@@ -390,8 +395,8 @@ tbody tr:hover {
 }
 
 /* Search Input */
-input[type="search"],
-input[type="text"] {
+input[type='search'],
+input[type='text'] {
   font-family: inherit;
   padding: var(--spacing-sm) var(--spacing-md);
   border: 1px solid var(--border-color);
@@ -402,8 +407,8 @@ input[type="text"] {
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-input[type="search"]:focus,
-input[type="text"]:focus {
+input[type='search']:focus,
+input[type='text']:focus {
   outline: none;
   border-color: var(--color-primary-500);
   box-shadow: 0 0 0 3px rgba(72, 187, 120, 0.1);

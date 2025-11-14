@@ -7,20 +7,20 @@ export const routes: Routes = [
   {
     path: '',
     component: Home,
-    title: 'Package List - End-of-Life Report'
+    title: 'Package List - End-of-Life Report',
   },
   {
     path: ':ecosystem',
     component: ViewEcosystem,
-    title: 'Ecosystem Packages'
+    title: 'Ecosystem Packages',
   },
   {
     path: ':ecosystem/:package',
     component: ViewPackage,
-    title: 'Package Details'
+    title: 'Package Details',
   },
   {
     path: '**',
-    redirectTo: ''
-  }
+    redirectTo: '',
+  },
 ];

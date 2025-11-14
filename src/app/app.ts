@@ -10,17 +10,16 @@ import { RouterOutlet, RouterLink } from '@angular/router';
         <div class="container">
           <div class="flex items-center justify-between py-4">
             <div class="flex items-center gap-md">
-              <a routerLink="/" class="text-xl font-bold text-primary-600">
-                📦 Package List
-              </a>
+              <a routerLink="/" class="text-xl font-bold text-primary-600">HeroDevs Package DB</a>
               <span class="text-text-muted">End-of-Life Report</span>
             </div>
             <div class="flex items-center gap-md">
-              <a 
-                href="https://herodevs.com" 
+              <a
+                href="https://herodevs.com"
                 target="_blank"
-                class="text-text-secondary hover:text-fuchsia-500 transition-colors"
+                class="flex items-center gap-2 text-text-secondary hover:text-fuchsia-500 transition-colors"
               >
+                <img src="/herodevs-logo-dark.svg" alt="HeroDevs" class="w-5 h-5" />
                 Powered by HeroDevs
               </a>
             </div>
@@ -35,9 +34,9 @@ import { RouterOutlet, RouterLink } from '@angular/router';
       <footer class="bg-bg-dark text-text-inverse py-8">
         <div class="container text-center">
           <div class="mb-4">
-            <a 
-              href="https://herodevs.com" 
-              target="_blank" 
+            <a
+              href="https://herodevs.com"
+              target="_blank"
               class="text-fuchsia-400 hover:text-fuchsia-500 font-semibold"
             >
               Need Extended Support?
@@ -50,12 +49,14 @@ import { RouterOutlet, RouterLink } from '@angular/router';
       </footer>
     </div>
   `,
-  styles: [`
-    :host {
-      display: block;
-      min-height: 100vh;
-    }
-  `],
+  styles: [
+    `
+      :host {
+        display: block;
+        min-height: 100vh;
+      }
+    `,
+  ],
 })
 export class App {
   protected readonly title = signal('Package List - End-of-Life Report');
