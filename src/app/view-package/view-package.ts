@@ -1,13 +1,17 @@
-import { Component, inject, computed } from '@angular/core';
+import { Component, inject, computed, signal } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { map } from 'rxjs';
 import { DatePipe, TitleCasePipe } from '@angular/common';
 import { DataService } from '../services/data.service';
+import {
+  SupportRequestPopupComponent,
+  type SupportRequest,
+} from '../components/support-request-popup.component';
 
 @Component({
   selector: 'app-view-package',
-  imports: [RouterLink, DatePipe, TitleCasePipe],
+  imports: [RouterLink, DatePipe, TitleCasePipe, SupportRequestPopupComponent],
   template: `
     <div class="container py-8">
       <!-- Header -->
@@ -29,11 +33,7 @@ import { DataService } from '../services/data.service';
               @if (hasHeroDevsSupport()) {
               <span>•</span>
               <span class="flex items-center gap-1">
-                <img
-                  src="https://herodevs.com/images/hd-logo-icon.svg"
-                  alt="HeroDevs"
-                  class="w-4 h-4"
-                />
+                <img src="/herodevs-logo-dark.svg" alt="HeroDevs" class="w-4 h-4" />
                 NES Available
               </span>
               }
@@ -149,13 +149,19 @@ import { DataService } from '../services/data.service';
                   @if (version.heroDevsSupported) {
                   <a href="https://herodevs.com" target="_blank" title="Supported by HeroDevs NES">
                     <img
-                      src="https://herodevs.com/images/hd-logo-icon.svg"
+                      src="/herodevs-logo-dark.svg"
                       alt="HeroDevs NES"
                       class="herodevs-logo mx-auto"
                     />
                   </a>
                   } @else {
-                  <span class="text-text-muted">-</span>
+                  <button
+                    (click)="requestSupport(packageData()!.name)"
+                    class="request-support-link mx-auto"
+                    title="Request extended support for this package"
+                  >
+                    Request Support
+                  </button>
                   }
                 </td>
               </tr>
@@ -195,6 +201,14 @@ import { DataService } from '../services/data.service';
       </div>
       } }
     </div>
+
+    <!-- Support Request Popup -->
+    @if (showSupportPopup()) {
+    <app-support-request-popup
+      (submitRequest)="onSupportRequestSubmit($event)"
+      (closePopup)="closeSupportPopup()"
+    />
+    }
   `,
   styles: [
     `
@@ -517,5 +531,30 @@ export class ViewPackage {
       flatpak: '📱',
     };
     return icons[ecosystem] || '📦';
+  }
+
+  // Support request functionality
+  showSupportPopup = signal(false);
+
+  requestSupport(packageName: string) {
+    this.showSupportPopup.set(true);
+  }
+
+  closeSupportPopup() {
+    this.showSupportPopup.set(false);
+  }
+
+  onSupportRequestSubmit(request: SupportRequest) {
+    // Here you would typically send the request to your backend
+    console.log('Support request submitted:', {
+      ...request,
+      ecosystem: this.ecosystemName(),
+      packageName: this.packageName()
+    });
+    
+    // Show success message (you could add a toast notification here)
+    alert('Thank you! Your support request has been submitted. A HeroDevs representative will contact you shortly.');
+    
+    this.closeSupportPopup();
   }
 }

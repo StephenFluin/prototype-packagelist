@@ -5,10 +5,11 @@ import { map } from 'rxjs';
 import { FormsModule } from '@angular/forms';
 import { TitleCasePipe } from '@angular/common';
 import { DataService } from '../services/data.service';
+import { SupportRequestPopupComponent, type SupportRequest } from '../components/support-request-popup.component';
 
 @Component({
   selector: 'app-view-ecosystem',
-  imports: [RouterLink, FormsModule, TitleCasePipe],
+  imports: [RouterLink, FormsModule, TitleCasePipe, SupportRequestPopupComponent],
   template: `
     <div class="container py-8">
       <!-- Header -->
@@ -138,13 +139,19 @@ import { DataService } from '../services/data.service';
                   title="Supported by HeroDevs NES"
                 >
                   <img
-                    src="https://herodevs.com/images/hd-logo-icon.svg"
+                    src="/herodevs-logo-dark.svg"
                     alt="HeroDevs"
                     class="herodevs-logo"
                   />
                 </a>
                 } @else {
-                <span class="text-text-muted text-sm">-</span>
+                <button 
+                  (click)="requestSupport(pkg.name)"
+                  class="request-support-link"
+                  title="Request extended support for this package"
+                >
+                  Request Support
+                </button>
                 }
               </td>
             </tr>
@@ -163,6 +170,14 @@ import { DataService } from '../services/data.service';
       </div>
       }
     </div>
+    
+    <!-- Support Request Popup -->
+    @if (showSupportPopup()) {
+      <app-support-request-popup 
+        (submitRequest)="onSupportRequestSubmit($event)"
+        (closePopup)="closeSupportPopup()"
+      />
+    }
   `,
   styles: [
     `
@@ -450,5 +465,33 @@ export class ViewEcosystem {
       flatpak: '📱',
     };
     return icons[ecosystem] || '📦';
+  }
+
+  // Support request functionality
+  showSupportPopup = signal(false);
+  currentPackageForSupport = signal<string>('');
+
+  requestSupport(packageName: string) {
+    this.currentPackageForSupport.set(packageName);
+    this.showSupportPopup.set(true);
+  }
+
+  closeSupportPopup() {
+    this.showSupportPopup.set(false);
+    this.currentPackageForSupport.set('');
+  }
+
+  onSupportRequestSubmit(request: SupportRequest) {
+    // Here you would typically send the request to your backend
+    console.log('Support request submitted:', {
+      ...request,
+      ecosystem: this.ecosystemName(),
+      packageName: this.currentPackageForSupport()
+    });
+    
+    // Show success message (you could add a toast notification here)
+    alert('Thank you! Your support request has been submitted. A HeroDevs representative will contact you shortly.');
+    
+    this.closeSupportPopup();
   }
 }
