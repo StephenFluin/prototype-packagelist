@@ -165,10 +165,7 @@ a:hover {
   text-decoration: underline;
 }
 
-a:visited {
-  color: var(--color-fuchsia-500); /* Same as unvisited */
-}
-
+a:visited,
 a:link {
   color: var(--color-fuchsia-500); /* Same as unvisited */
 }
@@ -482,7 +479,8 @@ tbody tr:hover {
   color: var(--color-fuchsia-500);
 }
 
-.text-white {
+.text-white,
+a.text-white {
   color: white;
 }
 
