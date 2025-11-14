@@ -18,7 +18,7 @@ import { RouterOutlet, RouterLink } from '@angular/router';
                 target="_blank"
                 class="flex items-center gap-2 text-text-secondary hover:text-fuchsia-500 transition-colors no-underline-hover"
               >
-                Powered by 
+                Powered by
                 <img src="/herodevs-logo-dark.svg" alt="HeroDevs" class="h-5" />
               </a>
             </div>
@@ -38,7 +38,11 @@ import { RouterOutlet, RouterLink } from '@angular/router';
               target="_blank"
               class="inline-block hover:opacity-80 transition-opacity no-underline-hover"
             >
-              <img src="/herodevs-logo-dark.svg" alt="HeroDevs" class="h-16 filter invert mx-auto" />
+              <img
+                src="/herodevs-logo-dark.svg"
+                alt="HeroDevs"
+                class="h-16 filter invert mx-auto"
+              />
             </a>
           </div>
           <div class="mb-4">

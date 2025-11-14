@@ -2,10 +2,11 @@ import { Component, output, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 export interface SupportRequest {
-  name: string;
-  companyName: string;
-  phoneNumber: string;
-  details: string;
+  name?: string;
+  email?: string;
+  companyName?: string;
+  phoneNumber?: string;
+  details?: string;
   packageName?: string;
   ecosystem?: string;
 }
@@ -19,47 +20,56 @@ export interface SupportRequest {
         <div class="popup-header">
           <h2 class="text-xl font-semibold mb-2">Request Extended Support</h2>
           <p class="text-text-secondary text-sm">
-            Get HeroDevs Never-Ending Support (NES) for this package to continue receiving security
-            updates and patches after end-of-life.
+            Get HeroDevs Never-Ending Support (NES) for this package. Fill out any information you'd
+            like to share with us to help us understand your needs.
           </p>
         </div>
 
         <form (ngSubmit)="onSubmit()" #requestForm="ngForm" class="popup-body">
           <div class="form-group">
-            <label for="name">Full Name *</label>
+            <label for="name">Full Name</label>
             <input
               type="text"
               id="name"
               name="name"
               [ngModel]="name()"
               (ngModelChange)="name.set($event)"
-              required
               placeholder="Enter your full name"
             />
           </div>
 
           <div class="form-group">
-            <label for="companyName">Company Name *</label>
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              [ngModel]="email()"
+              (ngModelChange)="email.set($event)"
+              placeholder="Enter your email address"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="companyName">Company Name</label>
             <input
               type="text"
               id="companyName"
               name="companyName"
               [ngModel]="companyName()"
               (ngModelChange)="companyName.set($event)"
-              required
               placeholder="Enter your company name"
             />
           </div>
 
           <div class="form-group">
-            <label for="phoneNumber">Phone Number *</label>
+            <label for="phoneNumber">Phone Number</label>
             <input
               type="tel"
               id="phoneNumber"
               name="phoneNumber"
               [ngModel]="phoneNumber()"
               (ngModelChange)="phoneNumber.set($event)"
-              required
               placeholder="Enter your phone number"
             />
           </div>
@@ -89,8 +99,6 @@ export interface SupportRequest {
           <button
             type="submit"
             class="bg-fuchsia-500 hover:bg-fuchsia-600 text-white px-4 py-2 rounded-md font-medium transition-colors"
-            [class.opacity-50]="!isFormValid()"
-            [disabled]="!isFormValid()"
             (click)="onSubmit()"
           >
             Submit Request
@@ -167,6 +175,7 @@ export interface SupportRequest {
 export class SupportRequestPopupComponent {
   // Form data as individual signals for better reactivity
   name = signal('');
+  email = signal('');
   companyName = signal('');
   phoneNumber = signal('');
   details = signal('');
@@ -182,17 +191,19 @@ export class SupportRequestPopupComponent {
   }
 
   isFormValid(): boolean {
-    return !!(this.name().trim() && this.companyName().trim() && this.phoneNumber().trim());
+    // All fields are optional, so the form is always valid
+    return true;
   }
 
   onSubmit() {
     if (this.isFormValid()) {
       const packageInfo = this.packageInfo();
       const request: SupportRequest = {
-        name: this.name(),
-        companyName: this.companyName(),
-        phoneNumber: this.phoneNumber(),
-        details: this.details(),
+        name: this.name().trim() || undefined,
+        email: this.email().trim() || undefined,
+        companyName: this.companyName().trim() || undefined,
+        phoneNumber: this.phoneNumber().trim() || undefined,
+        details: this.details().trim() || undefined,
         packageName: packageInfo?.packageName,
         ecosystem: packageInfo?.ecosystem,
       };
