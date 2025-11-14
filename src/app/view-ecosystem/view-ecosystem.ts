@@ -5,7 +5,10 @@ import { map } from 'rxjs';
 import { FormsModule } from '@angular/forms';
 import { TitleCasePipe } from '@angular/common';
 import { DataService } from '../services/data.service';
-import { SupportRequestPopupComponent, type SupportRequest } from '../components/support-request-popup.component';
+import {
+  SupportRequestPopupComponent,
+  type SupportRequest,
+} from '../components/support-request-popup.component';
 
 @Component({
   selector: 'app-view-ecosystem',
@@ -138,16 +141,12 @@ import { SupportRequestPopupComponent, type SupportRequest } from '../components
                   class="inline-block"
                   title="Supported by HeroDevs NES"
                 >
-                  <img
-                    src="/herodevs-logo-dark.svg"
-                    alt="HeroDevs"
-                    class="herodevs-logo"
-                  />
+                  <img src="/herodevs-logo-dark.svg" alt="HeroDevs" class="herodevs-logo" />
                 </a>
                 } @else {
-                <button 
+                <button
                   (click)="requestSupport(pkg.name)"
-                  class="request-support-link"
+                  class="bg-fuchsia-500 hover:bg-fuchsia-600 text-white px-3 py-1 rounded text-xs font-medium transition-colors border-0"
                   title="Request extended support for this package"
                 >
                   Request Support
@@ -170,13 +169,13 @@ import { SupportRequestPopupComponent, type SupportRequest } from '../components
       </div>
       }
     </div>
-    
+
     <!-- Support Request Popup -->
     @if (showSupportPopup()) {
-      <app-support-request-popup 
-        (submitRequest)="onSupportRequestSubmit($event)"
-        (closePopup)="closeSupportPopup()"
-      />
+    <app-support-request-popup
+      (submitRequest)="onSupportRequestSubmit($event)"
+      (closePopup)="closeSupportPopup()"
+    />
     }
   `,
   styles: [
@@ -486,12 +485,14 @@ export class ViewEcosystem {
     console.log('Support request submitted:', {
       ...request,
       ecosystem: this.ecosystemName(),
-      packageName: this.currentPackageForSupport()
+      packageName: this.currentPackageForSupport(),
     });
-    
+
     // Show success message (you could add a toast notification here)
-    alert('Thank you! Your support request has been submitted. A HeroDevs representative will contact you shortly.');
-    
+    alert(
+      'Thank you! Your support request has been submitted. A HeroDevs representative will contact you shortly.'
+    );
+
     this.closeSupportPopup();
   }
 }

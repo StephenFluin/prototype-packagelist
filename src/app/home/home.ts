@@ -8,7 +8,7 @@ import { DataService } from '../services/data.service';
   template: `
     <div class="container py-8">
       <div class="text-center mb-8">
-        <h1 class="text-4xl font-bold mb-4">End-of-Life Package Report</h1>
+        <h1 class="text-4xl font-bold mb-4">Browse Package Ecosystems</h1>
         <p class="text-text-secondary text-lg max-w-2xl mx-auto">
           Monitor package ecosystems for end-of-life components and security vulnerabilities. Get
           extended support through HeroDevs NES.
@@ -17,12 +17,14 @@ import { DataService } from '../services/data.service';
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         @for (ecosystem of ecosystemSummary(); track ecosystem.ecosystem) {
-        <a
-          [routerLink]="[ecosystem.ecosystem]"
-          class="card block hover:shadow-lg transition-shadow"
-        >
+        <div class="card hover:shadow-lg transition-shadow">
           <div class="flex items-center justify-between mb-4">
-            <h3 class="text-xl font-semibold capitalize">{{ ecosystem.ecosystem }}</h3>
+            <a
+              [routerLink]="[ecosystem.ecosystem]"
+              class="text-xl font-semibold capitalize hover:text-primary-600 transition-colors no-underline-hover"
+            >
+              {{ ecosystem.ecosystem }}
+            </a>
             <span class="text-2xl">{{ getEcosystemIcon(ecosystem.ecosystem) }}</span>
           </div>
 
@@ -78,7 +80,17 @@ import { DataService } from '../services/data.service';
             </div>
           </div>
           }
-        </a>
+
+          <div class="mt-6 pt-4 border-t border-border-color text-right">
+            <a
+              [routerLink]="[ecosystem.ecosystem]"
+              class="inline-flex items-center gap-2 border-2 border-fuchsia-500 hover:bg-fuchsia-500 text-fuchsia-500 hover:text-white px-6 py-3 rounded-lg font-medium transition-all text-sm shadow-sm hover:shadow-md"
+            >
+              View Packages
+              <span>→</span>
+            </a>
+          </div>
+        </div>
         }
       </div>
 

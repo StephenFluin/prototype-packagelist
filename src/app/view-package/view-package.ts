@@ -157,7 +157,7 @@ import {
                   } @else {
                   <button
                     (click)="requestSupport(packageData()!.name)"
-                    class="request-support-link mx-auto"
+                    class="bg-fuchsia-500 hover:bg-fuchsia-600 text-white px-4 py-2 rounded-md font-medium transition-colors border-0 mx-auto block"
                     title="Request extended support for this package"
                   >
                     Request Support
@@ -549,12 +549,14 @@ export class ViewPackage {
     console.log('Support request submitted:', {
       ...request,
       ecosystem: this.ecosystemName(),
-      packageName: this.packageName()
+      packageName: this.packageName(),
     });
-    
+
     // Show success message (you could add a toast notification here)
-    alert('Thank you! Your support request has been submitted. A HeroDevs representative will contact you shortly.');
-    
+    alert(
+      'Thank you! Your support request has been submitted. A HeroDevs representative will contact you shortly.'
+    );
+
     this.closeSupportPopup();
   }
 }
